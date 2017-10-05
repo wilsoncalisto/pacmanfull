@@ -144,11 +144,11 @@ PacmanGame.prototype = {
         this.changeModeTimer = this.time.time + this.TIME_MODES[this.currentMode].time;
         
         // Ghosts
-        this.blinky = new Ghost(this, "ghosts", "blinky", {x:13, y:11}, Phaser.RIGHT);
-        this.pinky = new Ghost(this, "ghosts", "pinky", {x:15, y:14}, Phaser.LEFT);
-        this.inky = new Ghost(this, "ghosts", "inky", {x:14, y:14}, Phaser.RIGHT);
-        this.clyde = new Ghost(this, "ghosts", "clyde", {x:17, y:14}, Phaser.LEFT);
-        this.ghosts.push(this.clyde, this.pinky, this.inky, this.blinky);
+       // this.blinky = new Ghost(this, "ghosts", "blinky", {x:13, y:11}, Phaser.RIGHT);
+       // this.pinky = new Ghost(this, "ghosts", "pinky", {x:15, y:14}, Phaser.LEFT);
+       // this.inky = new Ghost(this, "ghosts", "inky", {x:14, y:14}, Phaser.RIGHT);
+       // this.clyde = new Ghost(this, "ghosts", "clyde", {x:17, y:14}, Phaser.LEFT);
+      //  this.ghosts.push(this.clyde, this.pinky, this.inky, this.blinky);
         
         this.sendExitOrder(this.pinky);
     },
@@ -242,7 +242,7 @@ PacmanGame.prototype = {
             
             if (this.numDots < this.TOTAL_DOTS/3 && !this.isClydeOut) {
                 this.isClydeOut = true;
-                this.sendExitOrder(this.clyde);
+              //  this.sendExitOrder(this.clyde);
             }
             
             if (this.changeModeTimer !== -1 && !this.isPaused && this.changeModeTimer < this.time.time) {
@@ -337,7 +337,7 @@ PacmanGame.prototype = {
     },
     
     sendExitOrder: function(ghost) {
-        ghost.mode = this.clyde.EXIT_HOME;
+       // ghost.mode = this.clyde.EXIT_HOME;
     },
     
     sendScatterOrder: function() {
