@@ -2,7 +2,7 @@ var Pacman = function(game, key) {
     this.game = game;
     this.key = key;
     
-    this.speed = 150;
+        this.speed = 150;
     this.isDead = false;
     this.isAnimatingDeath = false;
     this.keyPressTimer = 0;
@@ -34,7 +34,7 @@ var Pacman = function(game, key) {
     this.sprite.body.setSize(16, 16, 0, 0);
     
     this.sprite.play('munch');
-    this.move(Phaser.LEFT);    
+    this.move(Phaser.STOP);
 };
 
 Pacman.prototype.move = function(direction) {
@@ -59,7 +59,7 @@ Pacman.prototype.move = function(direction) {
         this.sprite.body.velocity.y = speed;
     }
 
-    //  Reset the scale and angle (Pacman is facing to the right in the sprite sheet)
+    //  Reset the scale and angle (Pacman is facing to the right the sprite sheet)
     this.sprite.scale.x = 1;
     this.sprite.angle = 0;
 
