@@ -106,6 +106,7 @@ PacmanGame.prototype = {
         this.load.tilemap('map', 'assets/pacman-map.json', null, Phaser.Tilemap.TILED_JSON);
         //this.load.audio('pacmanMunch', ['assets/pacman-munch.wav']); //RAI
         this.load.audio('song', ['assets/pacman_beginning.wav']);
+        this.load.audio('munch', ['assets/pacman-munch.wav']);
         //  Needless to say, the beast was stoned... and the graphics are Namco (C)opyrighted
     },
 
@@ -131,9 +132,11 @@ PacmanGame.prototype = {
         this.map.setCollisionByExclusion([this.safetile], true, this.layer);
 
 		// Our hero
-        this.pacman = new Pacman(this, "pacman");
+        this.munchSong=this.add.audio('munch');
+        this.pacman = new Pacman(this, "pacman", this.munchSong);
         this.music=this.add.audio('song');
         this.music.play();
+        
         // Score and debug texts
         this.scoreText = game.add.text(8, 272, "Score: " + this.score, { fontSize: "16px", fill: "#fff" });
         this.debugText = game.add.text(375, 260, "", { fontSize: "12px", fill: "#fff" });

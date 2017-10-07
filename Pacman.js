@@ -1,6 +1,7 @@
-var Pacman = function(game, key) {   
+var Pacman = function(game, key, munchSong) {   
     this.game = game;
     this.key = key;
+    this.munchSong = munchSong;
     
         this.speed = 150;
     this.isDead = false;
@@ -151,8 +152,7 @@ Pacman.prototype.checkKeys = function(cursors) {
 };
 
 Pacman.prototype.eatDot = function(pacman, dot) {
-    //munchSong.play('', 0, 1, false); //RAI
-
+    this.munchSong.play('', 0, 1, false);
     dot.kill();
     
     this.game.score ++;
