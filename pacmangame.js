@@ -22,6 +22,8 @@ var PacmanGame = function (game) {
     this.gridsize = 16;       
     this.threshold = 3;
     
+    //var music;
+
     this.SPECIAL_TILES = [
         { x: 12, y: 11 },
         { x: 15, y: 11 },
@@ -102,7 +104,8 @@ PacmanGame.prototype = {
         this.load.spritesheet('pacman', 'assets/pacman.png', 32, 32);
         this.load.spritesheet("ghosts", "assets/ghosts32.png", 32, 32);
         this.load.tilemap('map', 'assets/pacman-map.json', null, Phaser.Tilemap.TILED_JSON);
-
+        //this.load.audio('pacmanMunch', ['assets/pacman-munch.wav']); //RAI
+        this.load.audio('song', ['assets/pacman_beginning.wav']);
         //  Needless to say, the beast was stoned... and the graphics are Namco (C)opyrighted
     },
 
@@ -112,6 +115,7 @@ PacmanGame.prototype = {
 
         this.layer = this.map.createLayer('Pacman');
 
+        //this.munchSong = game.add.audio('pacmanMunch', 1, true); //RAI
         this.dots = this.add.physicsGroup();
         this.numDots = this.map.createFromTiles(7, this.safetile, 'dot', this.layer, this.dots);
         this.TOTAL_DOTS = this.numDots;
@@ -128,7 +132,8 @@ PacmanGame.prototype = {
 
 		// Our hero
         this.pacman = new Pacman(this, "pacman");
-
+        this.music=this.add.audio('song');
+        this.music.play();
         // Score and debug texts
         this.scoreText = game.add.text(8, 272, "Score: " + this.score, { fontSize: "16px", fill: "#fff" });
         this.debugText = game.add.text(375, 260, "", { fontSize: "12px", fill: "#fff" });

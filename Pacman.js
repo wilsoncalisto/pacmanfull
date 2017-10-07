@@ -35,6 +35,7 @@ var Pacman = function(game, key) {
     
     this.sprite.play('munch');
     this.move(Phaser.STOP);
+
 };
 
 Pacman.prototype.move = function(direction) {
@@ -150,6 +151,8 @@ Pacman.prototype.checkKeys = function(cursors) {
 };
 
 Pacman.prototype.eatDot = function(pacman, dot) {
+    //munchSong.play('', 0, 1, false); //RAI
+
     dot.kill();
     
     this.game.score ++;
