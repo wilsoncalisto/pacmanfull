@@ -1,9 +1,10 @@
-var Pacman = function(game, key, munchSong) {   
+var Pacman = function(game, key) {
     this.game = game;
     this.key = key;
-    this.munchSong = munchSong;
-    
-        this.speed = 150;
+    this.munchSong = game.munchSong;
+
+
+    this.speed = 150;
     this.isDead = false;
     this.isAnimatingDeath = false;
     this.keyPressTimer = 0;

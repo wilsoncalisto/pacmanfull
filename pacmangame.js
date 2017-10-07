@@ -132,8 +132,8 @@ PacmanGame.prototype = {
         this.map.setCollisionByExclusion([this.safetile], true, this.layer);
 
 		// Our hero
-        this.munchSong=this.add.audio('munch');
-        this.pacman = new Pacman(this, "pacman", this.munchSong);
+        this.munchSong = this.add.audio('munch');
+        this.pacman = new Pacman(this, "pacman");
         this.music=this.add.audio('song');
         this.music.play();
         
