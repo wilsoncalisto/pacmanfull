@@ -2,7 +2,6 @@ var Pacman = function(game, key) {
     this.game = game;
     this.key = key;
 
-
     this.speed = 150;
     this.isDead = false;
     this.isAnimatingDeath = false;
@@ -97,7 +96,7 @@ Pacman.prototype.update = function() {
             this.sprite.x = 1;
         }
 
-        //  Update our grid sensors
+        //  atualizando as direcoes
         this.directions[1] = this.game.map.getTileLeft(this.game.layer.index, this.marker.x, this.marker.y);
         this.directions[2] = this.game.map.getTileRight(this.game.layer.index, this.marker.x, this.marker.y);
         this.directions[3] = this.game.map.getTileAbove(this.game.layer.index, this.marker.x, this.marker.y);
