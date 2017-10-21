@@ -70,12 +70,9 @@ var Ghost = function(game, key, name, startPos, startDir) {
     this.ghost.animations.add(Phaser.LEFT+20, [21], 0, false);
     this.ghost.animations.add(Phaser.UP+20, [22], 0, false);
     this.ghost.animations.add(Phaser.DOWN+20, [23], 0, false);
-    
     this.ghost.play(startDir);
-    
     this.game.physics.arcade.enable(this.ghost);
     this.ghost.body.setSize(16, 16, 0, 0);
-    
     this.move(startDir);
 };
 
